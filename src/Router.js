@@ -1,5 +1,6 @@
+import React from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import LoginForm from './LoginForm';
+import LoginForm from './User/LoginForm';
 import Main from './Main';
 
 const Router = () => {
