@@ -18,7 +18,6 @@ function JoinForm() {
         event.preventDefault();
         setErrorMessage('');
 
-        // Validate ID and Password
         if (username.length < 4 || username.length > 12) {
             setErrorMessage('아이디는 4 ~ 12자로 생성 가능합니다.');
             return;
@@ -30,7 +29,7 @@ function JoinForm() {
         }
 
         try {
-            const response = await axios.post(`${apiUrl}/join`, { username, password, email });
+            await axios.post(`${apiUrl}/join`, { username, password, email });
             navigate('/login');
         } catch (error) {
             console.log(error);

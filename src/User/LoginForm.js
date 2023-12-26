@@ -22,9 +22,9 @@ function LoginForm() {
         try {
             const response = await axios.post(`${apiUrl}/login`, { username, password });
             const token = response.data;
-            
-            localStorage.setItem('token', token);
-            login(username);
+            localStorage.setItem('token', token.value);
+            localStorage.setItem('username', username);
+            login();
             navigate('/');
         } catch (error) {
             if (error.response) {

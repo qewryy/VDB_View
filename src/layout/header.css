@@ -25,13 +25,15 @@
 
 .login-link,
 .join-link,
-.logout-link {
+.logout-link,
+.info-link {
     font-size: 2vh;
     margin-left: 20px;
 }
 
 .login-link:hover,
 .join-link:hover,
-.logout-link:hover {
+.logout-link:hover,
+.info-link:hover {
     text-decoration: underline;
 }
