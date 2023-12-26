@@ -18,6 +18,16 @@ function JoinForm() {
         event.preventDefault();
         setErrorMessage('');
 
+        // Validate ID and Password
+        if (username.length < 4 || username.length > 12) {
+            setErrorMessage('아이디는 4 ~ 12자로 생성 가능합니다.');
+            return;
+        }
+
+        if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$/.test(password)) {
+            setErrorMessage('비밀번호는 6 ~ 20자의 숫자와 영어로 생성 가능합니다.');
+            return;
+        }
 
         try {
             const response = await axios.post(`${apiUrl}/join`, { username, password, email });
