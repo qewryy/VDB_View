@@ -24,12 +24,14 @@
 }
 
 .login-link,
-.join-link {
+.join-link,
+.logout-link {
     font-size: 2vh;
     margin-left: 20px;
 }
 
 .login-link:hover,
-.join-link:hover {
+.join-link:hover,
+.logout-link:hover {
     text-decoration: underline;
 }

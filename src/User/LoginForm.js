@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useAuth  } from "../Auth/AuthContext";
 import './LoginForm.css';
 import Header from '../layout/header';
 import Footer from '../layout/footer';
@@ -10,9 +11,10 @@ function LoginForm() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-
+    
     const navigate = useNavigate();
-
+    const { login } = useAuth();
+    
     const handleSubmit = async (event) => {
         event.preventDefault();
         setErrorMessage('');
@@ -22,6 +24,7 @@ function LoginForm() {
             const token = response.data;
             
             localStorage.setItem('token', token);
+            login(username);
             navigate('/');
         } catch (error) {
             if (error.response) {
