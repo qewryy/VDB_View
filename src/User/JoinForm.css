@@ -1,14 +1,13 @@
-.LoginForm {
+.JoinForm {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80vh;
     font-size: 16px;
-    background-color: #f4f4f4;
 }
 
 .form-container {
-    width: 300px;
+    width: 400px;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -21,18 +20,20 @@ form {
     flex-direction: column;
 }
 
-h2 {
+label {
+    margin-bottom: 10px;
     color: #333;
-    margin-bottom: 20px;
+    text-align: left;
 }
 
 input {
     padding: 10px;
+    margin-top: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
+    width: 100%; /* input을 가득 채우도록 설정 */
+    box-sizing: border-box; /* padding과 border를 포함한 전체 크기를 사용하도록 설정 */
 }
 
 button {

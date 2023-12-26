@@ -1,13 +1,12 @@
+/* header.css */
 .main-header {
     background-color: #282c34;
     min-height: 10vh;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     color: white;
     padding: 20px;
-
 }
 
 .main-header a {
@@ -17,8 +16,20 @@
 
 .home-link {
     font-size: 3vh;
+    font-weight: bold;
 }
 
-.login-link {
+.nav-links {
+    display: flex;
+}
+
+.login-link,
+.join-link {
     font-size: 2vh;
+    margin-left: 20px;
+}
+
+.login-link:hover,
+.join-link:hover {
+    text-decoration: underline;
 }
