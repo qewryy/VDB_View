@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../Auth/AuthContext';
-import './header.css';
+import './layout.css';
 
 function Header() {
     const { authenticated, logout } = useAuth();

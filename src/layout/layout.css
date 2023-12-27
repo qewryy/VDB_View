@@ -1,5 +1,4 @@
-/* header.css */
-.main-header {
+.main-header, .main-footer{
     background-color: #282c34;
     min-height: 10vh;
     display: flex;
@@ -12,28 +11,39 @@
 .main-header a {
     text-decoration: none;
     color: white;
+    transition: color 0.3s ease;
 }
 
 .home-link {
-    font-size: 3vh;
+    font-size: 24px;
     font-weight: bold;
 }
 
 .nav-links {
     display: flex;
+    align-items: center;
 }
 
 .login-link,
 .join-link,
 .logout-link,
 .info-link {
-    font-size: 2vh;
+    font-size: 18px;
     margin-left: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .login-link:hover,
 .join-link:hover,
 .logout-link:hover,
 .info-link:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    background-color: #3a3f47;
+    color: #fff;
+}
+
+.user-id {
+    margin-right: 10px;
 }

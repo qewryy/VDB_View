@@ -1,0 +1,33 @@
+.userInfo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #f8f9fa;
+}
+
+.userInfo-header {
+    margin: 20px 0;
+    font-size: 2em;
+    color: #007bff;
+}
+
+.userInfo-details {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
+}
+
+.userInfo-details p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.not-logged-in {
+    font-size: 1.2em;
+    color: #666;
+}
