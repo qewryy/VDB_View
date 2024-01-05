@@ -13,6 +13,7 @@ function JoinForm() {
     const [errorMessage, setErrorMessage] = useState('');
 
     const navigate = useNavigate();
+    const [file, setFile] = useState(null);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -28,8 +29,18 @@ function JoinForm() {
             return;
         }
 
+        const formData = new FormData();
+        formData.append('username', username);
+        formData.append('password', password);
+        formData.append('email', email);
+        formData.append('photo', file);
+
         try {
-            await axios.post(`${apiUrl}/join`, { username, password, email });
+            await axios.post(`${apiUrl}/join`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
             navigate('/login');
         } catch (error) {
             console.log(error);
@@ -57,6 +68,9 @@ function JoinForm() {
                         <label>
                             <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email"/>
                         </label>
+                        <label>
+                            <input type="file" onChange={e => setFile(e.target.files[0])} />
+                        </label>
                         <button type="submit">가입하기</button>
                     </form>
                     {errorMessage && <div className="error"><strong>{errorMessage}</strong></div>}
@@ -64,6 +78,7 @@ function JoinForm() {
             </main>
             <Footer />
         </div>
+        
     );
 }
 
